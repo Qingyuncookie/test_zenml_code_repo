@@ -1,6 +1,5 @@
 from zenml import pipeline, step
 from zenml.config import DockerSettings
-from zenml.integrations.constants import FACETS, SKLEARN
 
 docker_settings = DockerSettings(source_files="download")
 
