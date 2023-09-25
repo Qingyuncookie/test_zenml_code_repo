@@ -1,7 +1,9 @@
 from zenml import pipeline, step
 from zenml.config import DockerSettings
 
-docker_settings = DockerSettings(source_files="download")
+docker_settings = DockerSettings(parent_image="zenmldocker/zenml:0.42.0-py3.10",
+                                 skip_build=True,
+    source_files="download")
 
 @step(enable_cache=False)
 def test_step():
