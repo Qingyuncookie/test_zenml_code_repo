@@ -2,7 +2,7 @@ from zenml import pipeline, step
 from zenml.config import DockerSettings
 from zenml.integrations.constants import FACETS, SKLEARN
 
-docker_settings = DockerSettings(required_integrations=[SKLEARN, FACETS], source_files="download")
+docker_settings = DockerSettings(source_files="download")
 
 @step(enable_cache=False)
 def test_step():
