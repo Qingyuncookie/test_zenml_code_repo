@@ -2,7 +2,7 @@ from zenml import pipeline, step
 from zenml.config import DockerSettings
 
 docker_settings = DockerSettings(parent_image=\
-    "packages.glodon.com/docker-intellisense-snapshots/zenml:chatglm2_0915-orchestrator",
+    "zenmldocker/zenml:0.42.0-py3.10",
     skip_build=False,
     source_files="download")
 
