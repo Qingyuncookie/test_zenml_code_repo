@@ -6,13 +6,16 @@ docker_settings = DockerSettings(parent_image=\
     skip_build=True,
     source_files="download")
 
+def on_failure(exception: BaseException):
+    print(f"Step failed: {str(e)}")
+
 @step(enable_cache=False)
 def test_step():
     print("ok")
     print("it's you")
 
 
-@pipeline(enable_cache=False, settings={"docker": docker_settings})
+@pipeline(enable_cache=False, on_failure=on_failure, settings={"docker": docker_settings})
 def test_repo_ppl():
     test_step()
 
