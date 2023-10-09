@@ -10,7 +10,7 @@ def on_failure(exception: BaseException):
 
 @step(enable_cache=False)
 def test_step():
-    with open("test.txt", 'r') as f:
+    with open("./test.txt", 'r') as f:
         lines = f.readlines()
         print(lines)
     print("ok")
