@@ -15,7 +15,8 @@ def on_failure(exception: BaseException):
 @step(enable_cache=False)
 def test_step():
     source_utils.set_custom_source_root(source_root=os.path.abspath(__file__))
-    with open("./test.txt", 'r') as f:
+    test_file = os.path.join(os.path.abspath(__file__), "test.txt")
+    with open(test_file, 'r') as f:
         lines = f.readlines()
         print(lines)
     print("ok")
