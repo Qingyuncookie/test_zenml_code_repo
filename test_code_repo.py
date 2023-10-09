@@ -2,8 +2,8 @@ from zenml import pipeline, step
 from zenml.config import DockerSettings
 
 docker_settings = DockerSettings(parent_image=\
-    "zenml:test_repo_ppl-orchestrator",
-    skip_build=True,
+    "chatglm:glodon_v3",
+    skip_build=False,
     source_files="download")
 
 def on_failure(exception: BaseException):
