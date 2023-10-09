@@ -3,7 +3,7 @@ from zenml.config import DockerSettings
 import sys
 import os
 from zenml.utils import source_utils
-source_utils.set_custom_source_root(source_root=os.path.abspath(__file__))
+
 
 docker_settings = DockerSettings(parent_image="zenml:test_repo_ppl-orchestrator",
     skip_build=True,
@@ -14,6 +14,7 @@ def on_failure(exception: BaseException):
 
 @step(enable_cache=False)
 def test_step():
+    source_utils.set_custom_source_root(source_root=os.path.abspath(__file__))
     with open("./test.txt", 'r') as f:
         lines = f.readlines()
         print(lines)
