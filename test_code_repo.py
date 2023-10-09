@@ -2,7 +2,8 @@ from zenml import pipeline, step
 from zenml.config import DockerSettings
 import sys
 import os
-sys.path.insert(0, os.path.abspath(__file__))
+from zenml.utils import source_utils
+source_utils.set_custom_source_root(source_root=os.path.abspath(__file__))
 
 docker_settings = DockerSettings(parent_image="zenml:test_repo_ppl-orchestrator",
     skip_build=True,
