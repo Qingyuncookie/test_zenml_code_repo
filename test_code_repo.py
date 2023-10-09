@@ -16,7 +16,6 @@ def test_step():
     print("ok")
     print("it's you")
     import time
-    time.sleep(300)
     print("it's me!")
 
 
