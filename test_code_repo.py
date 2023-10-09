@@ -2,7 +2,7 @@ from zenml import pipeline, step
 from zenml.config import DockerSettings
 
 docker_settings = DockerSettings(parent_image=\
-    "chatglm:glodon_v3",
+    "chatglm:zenml-glodon",
     skip_build=False,
     source_files="download")
 
