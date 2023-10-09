@@ -1,12 +1,15 @@
 from zenml import pipeline, step
 from zenml.config import DockerSettings
+import sys
+import os
+sys.path.insert(0, os.path.abspath(__file__))
 
 docker_settings = DockerSettings(parent_image="zenml:test_repo_ppl-orchestrator",
     skip_build=True,
     source_files="download")
 
 def on_failure(exception: BaseException):
-    print(f"Step failed: {str(e)}")
+    print(f"Step failed: {str(exception)}")
 
 @step(enable_cache=False)
 def test_step():
