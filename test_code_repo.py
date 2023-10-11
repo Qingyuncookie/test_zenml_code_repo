@@ -14,7 +14,7 @@ def on_failure(exception: BaseException):
 
 @step(enable_cache=False)
 def test_step():
-    os.chdir(f"{os.path.dirname(os.path.abspath(__file__))}")
+    # os.chdir(f"{os.path.dirname(os.path.abspath(__file__))}")
     test_file = "test.txt"
     with open(test_file, 'r') as f:
         lines = f.readlines()
